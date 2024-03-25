@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+
             $table->decimal('price', 10, 2)->default(0);
-            $table->integer('assessment');
-            $table->text('description');
-            $table->integer('sales_quantity');
+            $table->integer('assessment')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('quantity_stock')->default(0);
+            $table->integer('sales_quantity')->default(0);
+
             $table->timestamps();
         });
     }
