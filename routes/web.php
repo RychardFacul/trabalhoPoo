@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// PAGINAS ESTATICAS
+// ROTAS ESTATICAS
 
 Route::get('/', function () { // homepage
     return view('homepage');
@@ -12,7 +12,7 @@ Route::get('/contacts', function() { // informações sobre quem fez o site, lik
     return view('contacts');
 }); 
 
-// PAGINAS DINAMICAS
+// ROTAS DINAMICAS
 
 Route::get('/products/{q?}', 'ProductsController@index');
 Route::get('/cart_products', 'CartProductsController@index');
