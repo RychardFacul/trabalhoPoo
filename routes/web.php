@@ -2,17 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 
-// ROTAS ESTATICAS
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-Route::get('/', function () { // homepage
-    return view('homepage');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-Route::get('/contacts', function() { // informações sobre quem fez o site, likedin, github, ...
-    return view('contacts');
-}); 
-
-// ROTAS DINAMICAS
-
-Route::get('/products/{q?}', 'ProductsController@index');
-Route::get('/cart_products', 'CartProductsController@index');
