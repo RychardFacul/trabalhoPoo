@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('fornecedores', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('fk_endereco_id');
+            $table->foreign('fk_endereco_id')->references('id')->on('endereco');
+
+            $table->string('razao_social', 50);
+            $table->string('email', 50);
+            $table->string('telefone', 16);
+            $table->string('documento', 14);
+            $table->date('abertura');
+
             $table->timestamps();
         });
     }
