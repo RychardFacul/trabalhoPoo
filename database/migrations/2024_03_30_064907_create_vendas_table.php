@@ -8,28 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_cliente');
-            $table->foreign('id_cliente')->references('id')->on('clientes'); //Determinando a coluna id_cliente como FK referenciando sua origem - PK/tabela
-            $table->integer('forma_pgto');
-            $table->decimal('valor',10,2);
-            $table->dateTime('data_hora');
+
+            $table->string('form_pagamento', 2);
+            $table->string('status', 1);
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('vendas');
     }
