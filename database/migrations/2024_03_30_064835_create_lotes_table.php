@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('lotes', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('fk_fornecedores_id');
+            $table->foreign('fk_fornecedores_id')->references('id')->on('fornecedores');
+
+            $table->foreignId('fk_produtos_id');
+            $table->foreign('fk_produtos_id')->references('id')->on('produtos');
+
+            $table->string('descricao', 15);
+            $table->decimal('quantidade', 10, 3);
+            $table->decimal('valor_compra', 10, 2);
+            $table->date('validade')->nullable();
+
             $table->timestamps();
         });
     }

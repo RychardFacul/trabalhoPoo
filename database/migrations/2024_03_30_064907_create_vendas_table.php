@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
+
+            $table->string('form_pagamento', 2);
+            $table->string('status', 1);
+
             $table->timestamps();
         });
     }

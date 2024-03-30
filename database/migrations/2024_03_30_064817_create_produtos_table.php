@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('fk_categorias_id');
+            $table->foreign('fk_categorias_id')->references('id')->on('categorias');
+
+            $table->string('nome', 50);
+            $table->string('marca', 50);
+            $table->string('descricao', 500);
+            $table->decimal('valor', 10, 2);
+            $table->decimal('estoque', 10, 3);
+
             $table->timestamps();
         });
     }

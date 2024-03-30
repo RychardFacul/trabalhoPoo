@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email', 50);
             $table->string('telefone', 16);
             $table->string('documento', 14);
-            $table->date('abertura');
+            $table->date('abertura')->nullable();
 
             $table->timestamps();
         });

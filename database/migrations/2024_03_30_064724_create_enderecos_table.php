@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('fk_usuarios_id');
+            $table->foreignId('fk_usuarios_id')->nullable();
             $table->foreign('fk_usuarios_id')->references('id')->on('usuarios');
 
             $table->string('rua', 50);
