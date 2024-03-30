@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('fk_categorias_id');
-            $table->foreign('fk_categorias_id')->references('id')->on('categorias');
+            $table->foreignId('fk_categoria_id');
+            $table->foreign('fk_categoria_id')->references('id')->on('categorias');
 
             $table->string('nome', 50);
             $table->string('marca', 50);

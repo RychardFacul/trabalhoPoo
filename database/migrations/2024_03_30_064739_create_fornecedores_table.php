@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('fk_endereco_id');
-            $table->foreign('fk_endereco_id')->references('id')->on('endereco');
+            $table->foreign('fk_endereco_id')->references('id')->on('enderecos');
 
             $table->string('razao_social', 50);
             $table->string('email', 50);

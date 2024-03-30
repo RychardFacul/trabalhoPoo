@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('lotes', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('fk_fornecedores_id');
-            $table->foreign('fk_fornecedores_id')->references('id')->on('fornecedores');
+            $table->foreignId('fk_fornecedor_id');
+            $table->foreign('fk_fornecedor_id')->references('id')->on('fornecedores');
 
-            $table->foreignId('fk_produtos_id');
-            $table->foreign('fk_produtos_id')->references('id')->on('produtos');
+            $table->foreignId('fk_produto_id');
+            $table->foreign('fk_produto_id')->references('id')->on('produtos');
 
             $table->string('descricao', 15);
             $table->decimal('quantidade', 10, 3);
