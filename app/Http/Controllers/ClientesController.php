@@ -5,21 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProdutosController extends Controller
+class ClientesController extends Controller
 {
     public function editar() {
-        return view('produtos.editar');
+
+        return view('usuarios.editar');
     }
 
     public function apagar() {
-        return view('produtos.apagar');
+        return view('usuarios.apagar');
     }
     
     public function lista() {
-        return view('produtos.lista');
+        return view('usuarios.lista');
     }
 
     public function novo() {
-        return view('produtos.novo');
+        return view('usuarios.novo');
     }
 }

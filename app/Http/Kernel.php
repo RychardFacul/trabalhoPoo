@@ -54,8 +54,8 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'verificar.acesso.ger' => \App\Http\Middleware\VerificarNivelDeAcessoGerente::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth.nivel.acesso' => \App\Http\Middleware\Authorization::class,
 
         // já tava ai e a gente provavelmente não vai usar, depois a gente ve se apaga
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

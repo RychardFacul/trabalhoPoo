@@ -1,50 +1,43 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    AuthController,
+    CategoriasController,
+    ClientesController,
+    ProdutosController,
+    VendasController
+};
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/////
+///// ROTAS ESTATICAS
+/////
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', function (){ return view('estaticas.homepage'); });
 
-Route::get('/', function () {
-    return view('categorias.lista');
-})->name('categorias');
+// Route::get('/sobre', function (){ return view('estaticas.sobre'); });
+// Route::get('/contatos', function (){ return view('estaticas.contatos'); }); // estas não são prioridade
+// Route::get('/politicas', function (){ return view('estaticas.politicas'); });
 
-Route::get('/produtos', function () {
-    return view('produtos.lista');
-})->name('produtos');
+/////
+///// ROTAS DINAMICAS
+/////
 
-Route::get('/clientes', function () {
-    return view('clientes.lista');
-})->name('clientes');
+Route::get('/produtos', [ProdutosController::class, 'lista'])->name('produtos');
+Route::get('/vendas', [VendasController::class, 'lista'])->name('vendas');
+Route::get('/categorias', [CategoriasController::class, 'lista'])->name('categorias');
 
-Route::get('/vendas', function () {
-    return view('vendas.lista');
-})->name('vendas');
+// autentificacao
+Route::get('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
 
-Route::get('/produto/novo', function () {
-    return view('produtos.novo');
-});
+/////
+///// ROTAS RESTRITAS
+/////
 
-Route::get('/venda/novo', function () {
-    return view('vendas.novo');
-});
+Route::get('/clientes', [ClientesController::class, 'lista'])->name('clientes')->middleware('auth.nivel.acesso');
 
-Route::get('/cliente/novo', function () {
-    return view('clientes.novo');
-});
-
-Route::get('/categoria/novo', function () {
-    return view('categorias.novo');
-});
+Route::get('/produtos/novo', [ProdutosController::class, 'novo'])->middleware('auth.nivel.acesso');
+Route::get('/vendas/novo', [VendasController::class, 'novo'])->middleware('auth.nivel.acesso');
+Route::get('/categoria/novo', [CategoriasController::class, 'novo'])->middleware('auth.nivel.acesso');
+Route::get('/clientes/novo', [ClientesController::class, 'novo']);
