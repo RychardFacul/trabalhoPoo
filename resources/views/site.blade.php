@@ -27,8 +27,10 @@
     </head>
     <body>
         @include('layout.header')
-
-        @yield('section')
+        
+        <main class="container">
+            @yield('section')
+        </main>
 
         @include('layout.footer')
     </body>

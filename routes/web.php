@@ -28,7 +28,9 @@ Route::get('/vendas', [VendasController::class, 'lista'])->name('vendas');
 Route::get('/categorias', [CategoriasController::class, 'lista'])->name('categorias');
 
 // autentificacao
-Route::get('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');
+Route::get('/cadastro', [AuthController::class, 'apresentar']);
+Route::post('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 /////
