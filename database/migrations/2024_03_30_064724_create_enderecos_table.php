@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->string('rua', 50);
             $table->string('numero', );
-            $table->string('complemento', 50);
+            $table->string('complemento', 50)->nullable();
             $table->string('bairo', 50);
             $table->string('cidade', 50);
             $table->string('estado', 2);
