@@ -15,8 +15,8 @@ class ProdutosController extends Controller
         return view('produtos.apagar');
     }
     
-    public function lista() {
-        return view('produtos.lista');
+    public function index() {
+        return view('produtos.apresentar');
     }
 
     public function novo() {

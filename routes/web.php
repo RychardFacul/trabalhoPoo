@@ -13,7 +13,7 @@ use App\Http\Controllers\{
 ///// ROTAS ESTATICAS
 /////
 
-Route::get('/', function (){ return view('estaticas.homepage'); });
+Route::get('/', function (){ return view('estaticas.homepage'); })->name('homepage');
 
 // Route::get('/sobre', function (){ return view('estaticas.sobre'); });
 // Route::get('/contatos', function (){ return view('estaticas.contatos'); }); // estas não são prioridade
@@ -23,7 +23,7 @@ Route::get('/', function (){ return view('estaticas.homepage'); });
 ///// ROTAS DINAMICAS
 /////
 
-Route::get('/produtos', [ProdutosController::class, 'lista'])->name('produtos');
+Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos');
 Route::get('/vendas', [VendasController::class, 'lista'])->name('vendas');
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias');
 

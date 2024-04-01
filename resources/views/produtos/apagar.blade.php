@@ -1,6 +1,6 @@
-    @extends('site')
+@extends('site')
 
-    @section('section')
+@section('section')
     <main class="container">
     <div class="bg-body-tertiary p-5 rounded">
         <h1>Exclusão de Produto</h1>
@@ -31,4 +31,4 @@
             </div>
         </div>
     </main>
-    @endsection
+@endsection
