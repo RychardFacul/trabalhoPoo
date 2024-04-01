@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     AuthController,
-    CategoriasController,
+    CategoriaController,
     ClientesController,
     ProdutosController,
     VendasController
@@ -25,7 +25,7 @@ Route::get('/', function (){ return view('estaticas.homepage'); });
 
 Route::get('/produtos', [ProdutosController::class, 'lista'])->name('produtos');
 Route::get('/vendas', [VendasController::class, 'lista'])->name('vendas');
-Route::get('/categorias', [CategoriasController::class, 'lista'])->name('categorias');
+Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias');
 
 // autentificacao
 Route::get('/cadastro', [AuthController::class, 'apresentar']);
@@ -41,5 +41,5 @@ Route::get('/clientes', [ClientesController::class, 'lista'])->name('clientes')-
 
 Route::get('/produtos/novo', [ProdutosController::class, 'novo'])->middleware('auth.nivel.acesso');
 Route::get('/vendas/novo', [VendasController::class, 'novo'])->middleware('auth.nivel.acesso');
-Route::get('/categoria/novo', [CategoriasController::class, 'novo'])->middleware('auth.nivel.acesso');
+Route::get('/categoria/novo', [CategoriaController::class, 'novo'])->middleware('auth.nivel.acesso');
 Route::get('/clientes/novo', [ClientesController::class, 'novo']);

@@ -12,18 +12,12 @@
         </tr>
     </thead>
     <tbody>
+        @foreach($categorias as $show)
         <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
+            <th scope="row">{{$show->id}}</th>
+            <td>{{$show->descricao}}</td>
         </tr>
-        <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        </tr>
-        <tr>
-        <th scope="row">3</th>
-        <td>Larry the Bird</td>
-        </tr>
+        @endforeach
     </tbody>
     </table>
     
