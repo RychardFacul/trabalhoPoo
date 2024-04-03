@@ -7,19 +7,14 @@ use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
-    public function editar() {
-        return view('produtos.editar');
+    public function index($q = null) {
+        $listaProdutos = [];
+        // quando $q foi diferente de null, ele é o filtro da consolta dos produtos
+        return view('produtos.lista', ['listraprodutos' => $listaProdutos]);
     }
 
-    public function apagar() {
-        return view('produtos.apagar');
-    }
-    
-    public function index() {
-        return view('produtos.apresentar');
-    }
-
-    public function novo() {
-        return view('produtos.novo');
+    public function descricao($id) {
+        // passar infomações do produto com base no $id
+        return view('produtos.descricao', ['produto' => []]);
     }
 }
