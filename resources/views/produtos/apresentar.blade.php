@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-body">
                     aqui vai ficar uma imagem
-                    <img src="{{asset()}}" alt="" class="card-img-top">
+                    <img src="{{}}" alt="" class="card-img-top">
                     <h3 class="card-title">Title</h3>
                     <p class="card-text">Descrição:</p>
                     <p class="card-text">Price: </p>

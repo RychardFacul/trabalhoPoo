@@ -2,7 +2,7 @@
 @yield('title', 'Cadastro')
 
 @section('section')
-    <form class="bg-body-tertiary p-5 rounded" method="POST" action="{{route('cadastro')}}">
+    <form class="bg-body-tertiary p-5 rounded" method="POST" action="{{route('realizarcadastro')}}">
         <h1>Cadastre-se</h1>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nome</label>

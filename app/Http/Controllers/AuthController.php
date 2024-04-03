@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function apresentar() {
-        return view('auth.cadastro');
-    }
-
     public function cadastro(Request $request) {
         $nome = $request->input('nome');
         $telefone = $request->input('telefone');
@@ -31,6 +27,10 @@ class AuthController extends Controller
     }
 
     public function login() {
-        return view('auth.login');
+        $logado = false;
+
+        if ($logado){
+            return view('auth.login');
+        }
     } 
 }
