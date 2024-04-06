@@ -12,8 +12,8 @@ class ProdutosController extends Controller
         $q = $request->input('q');
 
         $produtos = $q  
-            ? Produto::where('nome', 'like', '%'.trim($q).'%')->paginate(10)
-            : Produto::paginate(10);
+            ? Produto::where('nome', 'like', '%'.trim($q).'%')->paginate(9)
+            : Produto::paginate(9);
         
         return view('produtos.lista', ['produtos' => $produtos]);
     }
