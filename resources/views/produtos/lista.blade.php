@@ -1,11 +1,10 @@
 @extends('site')
 
 @section('section')
-    
     <div class="mt-5 w-50 mx-auto">
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+        <form id="form_pesquisa" class="d-flex" role="search" method="GET">
+            <input id="pesquisa" class="form-control me-2" name="q" type="text" placeholder="produto" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
         </form>
     </div>
 
@@ -31,7 +30,9 @@
             </div>
         </div>
     </div>
-
+    @foreach ($produtos as $item)
+        <div>{{$item}}</div>
+    @endforeach
     <!-- paginacao, logica incrementada pelo controller -->
     <nav class="mt-5">
         <ul class="pagination justify-content-center">
@@ -46,5 +47,4 @@
             </li>
         </ul>
     </nav>
-
 @endsection

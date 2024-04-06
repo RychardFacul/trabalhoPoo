@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vendas\Produto;
 use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
-    public function index($q = null) {
-        $listaProdutos = [];
-        // quando $q foi diferente de null, ele é o filtro da consolta dos produtos
-        return view('produtos.lista', ['listraprodutos' => $listaProdutos]);
+    public function index(Request $request) {  
+        $q = $request->input('q');
+
+        $produtos = $q  
+            ? Produto::where('nome', 'like', '%'.trim($q).'%')->paginate(10)
+            : Produto::paginate(10);
+        
+        return view('produtos.lista', ['produtos' => $produtos]);
     }
 
     public function descricao($id) {
