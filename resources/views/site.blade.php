@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="auto">
     <head>
         <meta charset="utf-8">
