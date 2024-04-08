@@ -17,10 +17,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link @if(Route::currentRouteName() == 'login') active @endif" href="{{route('login')}}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a 
+              class="nav-link @if(Route::currentRouteName() == 'login') active @endif" 
+              aria-current="@if(Route::currentRouteName() == 'login') page @endif"
+              href="{{route('login')}}"
+            >
+              Login
+            </a>
           </li>
         </ul>
       </div>

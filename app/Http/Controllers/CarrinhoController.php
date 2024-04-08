@@ -10,4 +10,8 @@ class CarrinhoController extends Controller
     public function index() {
         return view('carrinho');
     }
+    
+    public function addAoCarrinho() {
+        
+    }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('marca', 50);
             $table->string('imagens', 500);
             $table->string('descricao', 500);
+            $table->string('descricao_detalhada', 500);
             $table->decimal('valor', 10, 2);
             $table->decimal('estoque', 10, 3);
 

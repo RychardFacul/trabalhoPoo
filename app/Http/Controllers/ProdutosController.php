@@ -19,7 +19,12 @@ class ProdutosController extends Controller
     }
 
     public function descricao($id) {
-        // passar infomações do produto com base no $id
-        return view('produtos.descricao', ['produto' => []]);
+        $produto = Produto::where('id', $id)->first();
+        
+        if ($produto){
+            return view('produtos.descricao', ['produto' => $produto]);
+        }
+
+        return redirect('/produtos');
     }
 }
