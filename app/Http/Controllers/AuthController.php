@@ -17,7 +17,6 @@ class AuthController extends Controller
             'telefone' => 'required|string|max:16',
             'documento' => 'required|string|max:14',
             'senha' => 'required|string|min:8|confirmed',
-            'nascimento' => 'nullable|date',
         ]);
 
         $usuario = Usuario::create([
@@ -26,7 +25,6 @@ class AuthController extends Controller
             'telefone' => $validacao['telefone'],
             'documento' => $validacao['documento'],
             'senha' => Hash::make($validacao['senha']),
-            'nascimento' => $validacao['nascimento'],
         ]); 
 
         Auth::login($usuario);

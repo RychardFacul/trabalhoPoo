@@ -62,8 +62,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="confirmar_senha">Confirmar Senha</label>
-                                <input id="confirmar_senha" type="password" class="form-control" name="confirmar_senha" required autocomplete="new-senha">
+                                <label for="senha_confirmation">Confirmar Senha</label>
+                                <input id="senha_confirmation" type="password" class="form-control" name="senha_confirmation" required autocomplete="new-senha">
                             </div>
 
                             <div class="form-group mb-0">
