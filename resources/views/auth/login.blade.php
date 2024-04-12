@@ -6,7 +6,8 @@
         @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">email</label>
-            <input name="email" type="email" class="form-control" id="exampleFormControlInput1">
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" >
+           
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Senha</label>
