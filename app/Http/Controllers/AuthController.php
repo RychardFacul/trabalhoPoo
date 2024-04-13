@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Vendas\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -19,12 +19,12 @@ class AuthController extends Controller
             'senha' => 'required|string|min:8|confirmed',
         ]);
 
-        $usuario = Usuario::create([
-            'nome' => $validacao['nome'],
+        $usuario = User::create([
+            'name' => $validacao['nome'],
             'email' => $validacao['email'],
             'telefone' => $validacao['telefone'],
             'documento' => $validacao['documento'],
-            'senha' => Hash::make($validacao['senha']),
+            'password' => Hash::make($validacao['senha']),
         ]); 
 
         Auth::login($usuario);
@@ -36,7 +36,7 @@ class AuthController extends Controller
         $email = $request->input('email');
         $senha = $request->input('senha');
         $hashed = Hash::make($senha);
-        if (Auth::attempt(['email' => $email, 'senha' => $hashed])) {
+        if (Auth::attempt(['email' => $email, 'password' => $hashed])) {
             return view('auth.cadastro');
         }else{
             return "usuario n existe";

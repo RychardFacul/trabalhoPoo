@@ -34,7 +34,7 @@ Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos');
 Route::get('/produto/descricao/{id}', [ProdutosController::class, 'descricao'])->name('produtos.descricao');
 
 Route::get('/compra/{prodId?}{carId?}', [CompraController::class, 'index'])->name('compra')->middleware('auth');
-Route::post('/comprar/{prodId?}{cardId?}', [CompraController::class, 'efetuarcompra'])->name('comprar')->middleware('auth');
+Route::post('/comprar', [CompraController::class, 'efetuarcompra'])->name('comprar')->middleware('auth');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');

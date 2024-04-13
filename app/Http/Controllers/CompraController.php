@@ -3,27 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vendas\Item;
+use App\Models\Vendas\Produto;
+use App\Models\Vendas\Venda;
 use Illuminate\Http\Request;
 
 use function PHPUnit\Framework\isNull;
 
 class CompraController extends Controller
 {
-    public function index($cardId = null, $prodId = null) {
-        if (isNull($cardId) && isNull($prodId)) {
-            return redirect()->route('produtos');
+    public function index($userId = null, $prodId = null) {
+        session()->forget(['produto', 'produtos']);
+
+        if (!isNull($prodId)) {
+            $prod = Produto::where('id', $prodId)->firstOrFail();
+            
+            session()->put('produto', $prod);
+            return view('compra');
         }
+        else if (!isNull($userId)) {
+            $itensIds = Item::where('fk_user_id', $userId)->pluck('fk_produto_id')->toArray();
+            $prods = Produto::whereIn('id', $itensIds)->get();
+            
+            session()->put('produtos', $prods);
+            return view('compra');
+        }
+    }
 
-        /**
-         * Informações do produtos ou produtos
-         * 
-         * Caso tenha cardId tem que passar todas as informações de cada produto para a view
-         * Caso tenha prodId tem que passar todas as informações do produto
-         * Se por algum motivo tenha os dois, considere que só tem o cardId
-         * 
-         * em ambos os casos passe como um array de nome produtos
-         */
+    public function efetuarcompra(Request $request) {
+        $prods = session('produtos');
+        $prod = session('produto');
+        session()->flush();
 
-        return view('compra', ['produtos' => []]);
+        if (!isNull($prod)) {
+            Venda::create([
+                
+            ]);
+        }
     }
 }
