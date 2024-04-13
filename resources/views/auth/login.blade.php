@@ -1,21 +1,26 @@
 @extends('site')
 @section('title', 'Login')
-@section('link')
+@section('links')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
 @section('section')
 
-    <form class="bg-body-tertiary p-5 rounded" method="POST" action="{{route('login')}}">
+    <form class=" luiza w-100 m-auto form-container  p-5 rounded" method="POST" action="{{route('login')}}">
         @csrf
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">email</label>
-            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" >
+            <div class="formulario">
+            <label for="floatingInput" class="">Email</label>
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="your-emai@gmail.com" >
            
         </div>
-        <div class="mb-2">
-            <label for="exampleFormControlTextarea1" class="form-label">Senha</label>
-            <input name="senha" type="password" class="form-control" id="exampleFormControlInput1">
+        <div class="maria">
+            <label for="floatingInput" class="">Senha</label>
+            <input type="password" class="form-control" id="floatingInput" placeholder="password" >
         </div>
-        <input type="submit" value="Login">
+        <div class="from-check text-start my-3">
+            <input type="checkbox" class="form-check-input" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">lembra-me</label>
+        </div>
+        <button class="btn rosa w-100 py-2">Entrar</button>
     </form>
+        
 @endsection
