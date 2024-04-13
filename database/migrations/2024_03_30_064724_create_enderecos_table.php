@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('fk_usuario_id')->nullable();
-            $table->foreign('fk_usuario_id')->references('id')->on('usuarios');
+            $table->foreign('fk_usuario_id')->references('id')->on('users');
 
             $table->string('rua', 50);
             $table->string('numero', );

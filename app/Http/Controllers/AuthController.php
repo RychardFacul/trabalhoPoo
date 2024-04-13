@@ -33,13 +33,16 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        $credenciais = $request->only(['email', 'senha']);
-
-        if (Auth::attempt($credenciais)) {
-            return redirect()->route('homepage');
+        $email = $request->input('email');
+        $senha = $request->input('senha');
+        $hashed = Hash::make($senha);
+        if (Auth::attempt(['email' => $email, 'senha' => $hashed])) {
+            return view('auth.cadastro');
+        }else{
+            return "usuario n existe";
         }
         
-        return redirect('/login')->with('erro', 'Credenciais invalidas');
+        
     } 
 
     public function logout() {
