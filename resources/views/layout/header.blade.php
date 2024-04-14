@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <nav class="navbar navbar-expand-md mb-4" style="background: pink">
     <div class="container-fluid">
       <a class="navbar-brand">Vendas online</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +23,24 @@
               href="{{route('login')}}"
             >
               Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a 
+              class="nav-link @if(Route::currentRouteName() == 'produtos') active @endif" 
+              aria-current="@if(Route::currentRouteName() == 'produtos') page @endif"
+              href="{{route('produtos')}}"
+            >
+              Produtos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a 
+              class="nav-link @if(Route::currentRouteName() == 'carrinho') active @endif" 
+              aria-current="@if(Route::currentRouteName() == 'carrinho') page @endif"
+              href="{{route('carrinho')}}"
+            >
+              Carrinho
             </a>
           </li>
         </ul>
