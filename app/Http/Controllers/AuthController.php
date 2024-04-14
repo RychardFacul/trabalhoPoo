@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bcrypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,7 +25,7 @@ class AuthController extends Controller
             'email' => $validacao['email'],
             'telefone' => $validacao['telefone'],
             'documento' => $validacao['documento'],
-            'password' => Hash::make($validacao['senha']),
+            'password' => bcrypt($validacao['senha']),
         ]); 
 
         Auth::login($usuario);
@@ -33,16 +34,16 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        $email = $request->input('email');
         $senha = $request->input('senha');
-        $hashed = Hash::make($senha);
-        if (Auth::attempt(['email' => $email, 'password' => $hashed])) {
-            return view('auth.cadastro');
+        $email = $request->input('email');
+        $check = User::where('email', $email)->pluck('password')->toArray();
+        if(Auth::attempt(['email' => $email]) ){
+            if(Hash::check($senha, $check[0])){
+                return redirect()->route('homepage');
+            }
         }else{
-            return "usuario n existe";
+            return view('auth.cadastro'); 
         }
-        
-        
     } 
 
     public function logout() {

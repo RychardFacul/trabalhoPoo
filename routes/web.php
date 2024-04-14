@@ -40,6 +40,9 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+Route::post('/carrinho', [AuthController::class, 'carrinho'])->name('carrinho');
+Route::post('/produtos', [AuthController::class, 'produtos'])->name('produtos');
+
 /////
 ///// ROTAS RESTRITAS
 /////
