@@ -47,6 +47,4 @@ Route::post('/produtos', [AuthController::class, 'produtos'])->name('produtos');
 ///// ROTAS RESTRITAS
 /////
 
-Route::get('/vendas', [VendasController::class, 'index'])->name('vendas')->middleware('auth.nivel.acesso');
-Route::get('/clientes', [ClientesController::class, 'index'])->name('clientes')->middleware('auth.nivel.acesso');
 Route::get('/categorias', [CategoriaController::class, 'index'])->name('categorias')->middleware('auth.nivel.acesso');
