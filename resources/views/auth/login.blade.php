@@ -14,7 +14,7 @@
         </div>
         <div class="maria">
             <label for="floatingInput" class="">Senha</label>
-            <input type="password" class="form-control" id="floatingInput" placeholder="password" >
+            <input name="senha" type="password" class="form-control" id="floatingInput" placeholder="password" >
         </div>
         <div class="from-check text-start my-3">
             <input type="checkbox" class="form-check-input" id="flexCheckDefault">
