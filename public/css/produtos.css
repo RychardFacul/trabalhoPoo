@@ -26,3 +26,15 @@ width: 100%;
 .card-body .card-link i{
 margin-right: 5px;
 }
+.card-text-Desc{
+    font-size: 18px;
+    color: White;
+    margin-top: 8px;
+    font-weight: 400;
+}
+.card-text-valor{
+    font-size: 18px;
+    color: White;
+    font-weight: 600;
+    margin: 8px 0px 8px 0px;
+}

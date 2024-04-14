@@ -16,12 +16,10 @@
                 <div class="card" href="#">
                     <div class="card-body">
                         <a class="text-decoration-none text-dark" href="/produto/descricao/{{$produto->id}}">
-                            <h3 class="card-title">{{$produto->nome}}</h3>
                             <img src="{{asset('img_produtos/notebook_img.webp')}}" alt="" class="card-img-top">
                         </a>
-                        <p class="card-text">{{$produto->descricao}}</p>
-                        <p class="card-text">R$ {{$produto->valor}}</p>
-                        <!---Modified By Jose--->
+                        <h5 class="card-text-Desc">{{$produto->descricao}}</h5>
+                        <h5 class="card-text-valor">R$ {{number_format($produto->valor, 2, ',', '.')}}</h5>
                         <a class="card-link btn btn-primary" href="#"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
                     </div>
                 </div>
