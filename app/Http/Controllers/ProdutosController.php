@@ -32,8 +32,8 @@ class ProdutosController extends Controller
         $linksImagens = explode(",", $produto["imagens"]);
         $imgs;
 
-        foreach ($linksImagens as $linkImagen) {
-            $imgs = $produto['descricao'].'/'.$linkImagen;
+        foreach ($linksImagens as $key => $linkImagen) {
+            $imgs[$key] = $produto['descricao'].'/'.$linkImagen;
         }
     
         return view('produtos.descricao', ['produto' => $produto, 'imagens' => $imgs]);

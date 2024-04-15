@@ -15,8 +15,8 @@
         <div class="col-md-5">
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"><img src='../images/Produtos/' class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
-                <div class="carousel-item"><img src='../images/Produtos/'class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
+                <div class="carousel-item active"><img src='{{asset('img_produtos/'.$imagens[0])}}' class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
+                <div class="carousel-item"><img src='{{asset('img_produtos/'.$imagens[0])}}'class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
                 <div class="carousel-item"><img src='../images/Produtos/' class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
                 <div class="carousel-item"><img src='../images/Produtos/' class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
                 <div class="carousel-item"><img src='../images/Produtos/' class='img-thumbnail w-100 d-block' alt='Slide Image' loading='lazy' style='height: 450px'/></div>
