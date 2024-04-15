@@ -19,8 +19,6 @@ return new class extends Migration
             $table->foreignId('fk_usuario_id');
             $table->foreign('fk_usuario_id')->references('id')->on('users');
 
-            $table->decimal('quantidade', 10, 3);
-
             $table->timestamps();
         });
     }
