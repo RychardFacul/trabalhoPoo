@@ -20,8 +20,7 @@
             <input type="checkbox" class="form-check-input" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">lembra-me</label>
         </div>
-        <button class="btn rosa w-100 py-2">Entrar</button>
-        <a href="{{route("cadastro")}}">cadastrar-se</a>
+        <a href="{{route("cadastro")}}"><button class="btn azul w-100 py-2">cadastrar-se</button></a>
     </form>
         
 @endsection
