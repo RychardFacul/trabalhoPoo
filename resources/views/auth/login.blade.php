@@ -21,6 +21,7 @@
             <label class="form-check-label" for="flexCheckDefault">lembra-me</label>
         </div>
         <button class="btn rosa w-100 py-2">Entrar</button>
+        <a href="{{route("cadastro")}}">cadastrar-se</a>
     </form>
         
 @endsection

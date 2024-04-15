@@ -1,6 +1,6 @@
 php, body {
     height: 100%;
-    background: url('https://i.pinimg.com/originals/24/93/88/249388e945f8d3056c1cfd385e7ea89a.jpg');
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzboIvhnxyw9XTruBCQ-IM9JKZPN348JzIlfJ0hDVw1Q&s');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -15,9 +15,9 @@ php, body {
 }
 .luiza {
     padding: 20px;
-    background-color: rgba(255, 127, 212, 0.726);
+    background-color: rgba(127, 236, 255, 0.486);
 }
 .rosa {
-    background-color: rgba(190, 18, 87, 0.863);
+    background-color: rgb(0, 96, 99);
     padding: 30px;
 }
