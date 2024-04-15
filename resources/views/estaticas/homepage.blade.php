@@ -25,6 +25,8 @@
     </button>
   </div>
 
-  <h1>BEM VINDO AO NOSSO MERCADO - luiza</h1>
+  <h1>BEM VINDO AO NOSSO MERCADO - SóGIRO SUPERMERCADO</h1>
+  
+  <a href="{{route("produtos")}}"><button class="btn azul w-100 py-2">veja nossos produtos</button></a>
 
 @endsection
