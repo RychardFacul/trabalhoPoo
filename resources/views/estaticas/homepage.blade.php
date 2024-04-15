@@ -25,6 +25,6 @@
     </button>
   </div>
 
-  <h1>BEM VINDO AO NOSSO MERCADO - NERDOLAS STORE</h1>
+  <h1>BEM VINDO AO NOSSO MERCADO - MARIA STORE</h1>
 
 @endsection
