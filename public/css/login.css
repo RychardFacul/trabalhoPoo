@@ -1,9 +1,4 @@
-php, body {
-    height: 100%;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzboIvhnxyw9XTruBCQ-IM9JKZPN348JzIlfJ0hDVw1Q&s');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 .form-container {
     max-width: 350px;
     padding: 1rem;

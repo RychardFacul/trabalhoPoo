@@ -22,13 +22,20 @@ class ProdutosController extends Controller
         return view('produtos.lista', ['produtos' => $produtos, 'imagens' => $imagens]);
     }
 
-    public function descricao($id) {
-        $produto = Produto::where('id', $id)->first();
-        
-        if ($produto){
-            return view('produtos.descricao', ['produto' => $produto]);
+    public function descricao($id = null) {
+        $produto = Produto::where('id', $id)->first()->toArray();
+    
+        if (!$produto) {
+            return redirect('/produtos');
         }
+    
+        $linksImagens = explode(",", $produto["imagens"]);
+        $imgs;
 
-        return redirect('/produtos');
+        foreach ($linksImagens as $linkImagen) {
+            $imgs = $produto['descricao'].'/'.$linkImagen;
+        }
+    
+        return view('produtos.descricao', ['produto' => $produto, 'imagens' => $imgs]);
     }
 }

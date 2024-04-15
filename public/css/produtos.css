@@ -1,9 +1,11 @@
+
 body {
-    height: 100%;
-    background: url('https://i.pinimg.com/736x/42/d1/30/42d1301a16b60d79b1e8471c4338765a.jpg');
+    background-color: #979dac;
+    color: #001030;
 }
 .card{
     margin-top: 15px;
+    background-color: rgba(0, 255, 255, 0.185);
 }
 .card-body img{
 height: 260px;
