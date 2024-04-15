@@ -1,0 +1,20 @@
+php, body {
+    height: 100%;
+    background: url('https://i.pinimg.com/736x/42/d1/30/42d1301a16b60d79b1e8471c4338765a.jpg');
+}
+
+.form-group {
+    padding: 0.3rem;
+    margin: 0 auto;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.pipi{
+   padding: 20px;
+   background-color: rgba(190, 18, 87, 0.452);
+    padding: 1rem;
+}
+.botao {
+    background-color: rgba(190, 18, 87, 0.336);
+     margin: 0 auto;
+}
