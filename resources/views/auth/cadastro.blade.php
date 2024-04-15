@@ -1,14 +1,16 @@
 @extends('site')
 @section('title', 'Cadastro')
-
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/cadastro.css') }}">
+@endsection
 @section('section')
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="card">
+                <div class="">
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('cadastro') }}">
+                    <div class="">
+                        <form class= "pipi" method="POST" action="{{ route('cadastro') }}">
                             @csrf   
 
                             <div class="form-group">
@@ -67,7 +69,7 @@
                             </div>
 
                             <div class="form-group mb-0">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="botao btn ">
                                     Cadastrar
                                 </button>
                             </div>
