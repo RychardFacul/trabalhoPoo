@@ -110,16 +110,16 @@ insert into fornecedores (id, fk_endereco_id, razao_social, email, telefone, doc
     (7, 12, 'Distribuidora Pereira & Associados', 'contato@pereiraeassociados.com.br', '71321098765', '789012340001');
 
 insert into produtos (id, fk_categoria_id, nome, marca, descricao, imagens, valor, estoque) values
-    (1, 1, 'Detergente', 'Ypê', 'Detergente_Ypê_500ml', 2.50, 100.000),
+    (1, 1, 'Detergente', 'Ypê', 'Detergente_Ypê_500ml', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 2.50, 100.000),
     (2, 2, 'Sabonete', 'Dove', 'Sabonete_Dove_90g', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 1.80, 150.000),
-    (3, 3, 'Leite', 'Nestlé', 'Leite_Integral_Nestlé_1L', 3.50, 50.000),
-    (4, 4, 'Milho', 'Quero', 'Milho_Verde_em_Lata_280g', 2.00, 80.000),
-    (5, 5, 'Refrigerante', 'Coca-Cola', 'Refrigerante_Coca-Cola_2L', 5.00, 60.000),
-    (6, 6, 'Cerveja', 'Skol', 'Cerveja_Skol_Pilsen_Lata_350ml', 3.00, 70.000),
-    (7, 1, 'Limpador Multiuso', 'Veja', 'Limpador_Multiuso_Veja_500ml', 4.00, 90.000),
-    (8, 2, 'Shampoo', 'Pantene', 'Shampoo_Pantene_Micelar_400ml', 8.00, 120.000),
-    (9, 3, 'Café', 'Melitta', 'Café_Melitta_Extra_Forte_500g', 10.00, 250.500),
-    (10, 4, 'Atum', 'Gomes da Costa', 'Atum_em_Lata_Óleo_170g', 6.00, 50.000);
+    (3, 3, 'Leite', 'Nestlé', 'Leite_Integral_Nestlé_1L', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 3.50, 50.000),
+    (4, 4, 'Milho', 'Quero', 'Milho_Verde_em_Lata_280g', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 2.00, 80.000),
+    (5, 5, 'Refrigerante', 'Coca-Cola', 'Refrigerante_Coca-Cola_2L', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 5.00, 60.000),
+    (6, 6, 'Cerveja', 'Skol', 'Cerveja_Skol_Pilsen_Lata_350ml', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 3.00, 70.000),
+    (7, 1, 'Limpador Multiuso', 'Veja', 'Limpador_Multiuso_Veja_500ml', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 4.00, 90.000),
+    (8, 2, 'Shampoo', 'Pantene', 'Shampoo_Pantene_Micelar_400ml', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 8.00, 120.000),
+    (9, 3, 'Café', 'Melitta', 'Café_Melitta_Extra_Forte_500g', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 10.00, 250.500),
+    (10, 4, 'Atum', 'Gomes da Costa', 'Atum_em_Lata_Óleo_170g', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 6.00, 50.000);
 
 insert into lotes (id, fk_fornecedor_id, fk_produto_id, descricao, quantidade, valor_compra, validade) values
     (1, 5, 7, 'A1b2C3d4E5', 150, 1000.00, '2027-06-05'),
