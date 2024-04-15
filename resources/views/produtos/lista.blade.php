@@ -11,12 +11,12 @@
     </div>
 
     <div class="row mt-5 mx-auto">
-        @foreach ($produtos as $produto)
+        @foreach ($produtos as $key => $produto)
             <div class="col-md-3">
                 <div class="card" href="#">
                     <div class="card-body">
                         <a class="text-decoration-none text-dark" href="/produto/descricao/{{$produto->id}}">
-                            <img src="{{asset('img_produtos/notebook_img.webp')}}" alt="" class="card-img-top">
+                            <img src="{{asset('img_produtos/'.$imagens[$key])}}" alt="" class="card-img-top">
                         </a>
                         <h5 class="card-text-Desc">{{$produto->descricao}}</h5>
                         <h5 class="card-text-valor">R$ {{number_format($produto->valor, 2, ',', '.')}}</h5>

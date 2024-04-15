@@ -12,7 +12,7 @@ use function PHPUnit\Framework\isNull;
 
 class CompraController extends Controller
 {
-    public function index($userId, $prodId) {
+    public function index($userId = null, $prodId = null) {
         session()->forget(['produto', 'produtos']);
 
         if (!isNull($prodId)) {
@@ -29,6 +29,8 @@ class CompraController extends Controller
             session()->put('produtos', $prods);
             return view('compra');
         }
+
+        return view('compra');
     }
 
     public function efetuarcompra(Request $request) {

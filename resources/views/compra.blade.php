@@ -1,5 +1,7 @@
 @extends('site')
-
+@section('links')
+    <link rel="stylesheet" href="{{ asset('css/compra.css') }}">
+@endsection
 @section('section')
     <img src="" alt="">
     <div>Descrição completa</div>

@@ -15,7 +15,11 @@ class ProdutosController extends Controller
             ? Produto::where('nome', 'like', '%'.trim($q).'%')->paginate(9)
             : Produto::paginate(9);
         
-        return view('produtos.lista', ['produtos' => $produtos]);
+        foreach($produtos as $key => $produto) {
+            $imagens[$key] = $produto['descricao'].'/'.explode(",", $produto["imagens"])[0];
+        }
+
+        return view('produtos.lista', ['produtos' => $produtos, 'imagens' => $imagens]);
     }
 
     public function descricao($id) {
