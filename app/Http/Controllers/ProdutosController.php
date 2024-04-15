@@ -23,12 +23,12 @@ class ProdutosController extends Controller
     }
 
     public function descricao($id = null) {
-        $produto = Produto::where('id', $id)->first()->toArray();
-    
+        $produto = Produto::where('id', $id)->first();
+        
         if (!$produto) {
             return redirect('/produtos');
         }
-    
+        $produto = $produto->toArray();
         $linksImagens = explode(",", $produto["imagens"]);
         $imgs;
 
