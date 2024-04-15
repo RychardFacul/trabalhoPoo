@@ -30,7 +30,7 @@ class ProdutosController extends Controller
         }
         $produto = $produto->toArray();
         $linksImagens = explode(",", $produto["imagens"]);
-        $imgs;
+        $imgs = [];
 
         foreach ($linksImagens as $key => $linkImagen) {
             $imgs[$key] = $produto['descricao'].'/'.$linkImagen;

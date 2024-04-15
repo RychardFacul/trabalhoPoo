@@ -22,9 +22,9 @@ return new class extends Migration
             $table->foreignId('fk_carrinho_id');
             $table->foreign('fk_carrinho_id')->references('id')->on('carrinhos');
 
-            $table->boolean('check');
+            $table->boolean('check')->default(1);
             
-            $table->decimal('quantidade', 10, 3);
+            $table->decimal('quantidade', 10, 3)->default(1);
 
             $table->timestamps();
         });

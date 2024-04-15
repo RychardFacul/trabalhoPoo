@@ -42,6 +42,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/carrinho', [AuthController::class, 'carrinho'])->name('carrinho');
 Route::post('/produtos', [AuthController::class, 'produtos'])->name('produtos');
+Route::get('/carrinho/adicionar/{id}', [CarrinhoController::class, 'addAoCarrinho'])->name('addCarrinho');
 
 /////
 ///// ROTAS RESTRITAS

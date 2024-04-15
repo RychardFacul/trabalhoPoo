@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Vendas\Carrinho;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -27,7 +28,13 @@ class AuthController extends Controller
             'password' => Hash::make($validacao['senha']),
         ]); 
 
+        $carrinho = Carrinho::create([
+            'fk_usuario_id' => $usuario['id'],
+        ]);
+
         Auth::login($usuario);
+        session()->put('userId', $usuario['id']);
+        session()->put('cardId', $carrinho['id']);
         
         return redirect()->route('homepage');
     }
@@ -37,22 +44,31 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'senha' => 'required|string',
         ]);
-
+        
         $email = $validacao['email'];
         $senha = $validacao['senha'];
-
+        
         $usuario = User::where('email', $email)->first();
-
+        
         if ($usuario && Hash::check($senha, $usuario->password)) {
             Auth::login($usuario);
+
+            $carrinho = Carrinho::where('fk_usuario_id', $usuario['id'])->first();
+    
+            session()->put('cardId', $carrinho['id']);
+            session()->put('userId', $usuario['id']);
+            
             return redirect()->route('homepage');
         } else {
             return view('auth.cadastro'); 
         }
     } 
-
+    
     public function logout() {
         Auth::logout();
+        session()->forget('cardId');
+        session()->forget('userId');
+        
         return redirect()->route('homepage');
     }
 }
