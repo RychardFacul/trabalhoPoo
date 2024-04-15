@@ -1,6 +1,7 @@
 @extends('site')
 
 @section('section')
+<link href="./css/produtos.css" rel="stylesheet">
     <div>
         <img>
         <div>{{ $produto->nome }}</div>
@@ -36,14 +37,11 @@
             <div class="d-flex flex-row">
                 
             </div>
-            <div class="d-flex align-items-center mt-4 offers mb-1"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Marca :</span><span class="ml-1"><br></span></div>
-            <div class="d-flex align-items-center mt-4 offers mb-1"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Placa Mãe :</span><span class="ml-1"><br></span></div>
-            <div class="d-flex align-items-center offers mb-1"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Processador: </span><span class="ml-1"><br></span></div>
-            <div class="d-flex align-items-center offers mb-1"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Memoria: </span><span class="ml-1"><br></span></div>
-            <div class="d-flex align-items-center offers"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">HD: </span><span class="ml-1"><br></span></div>
+            <div class="d-flex align-items-center mt-4 offers mb-1"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Fabricante :</span><span class="ml-1"><br></span></div>
             <div class="d-flex align-items-center offers"><i class="fa fa-check-square-o mt-1"></i><span class="ml-1 font-weight-bold">Descrição: </span><span class="ml-1"><br></span></div>
             <hr>
             <div><span class="font-weight-bold">Verdido Por:</span><span class="ml-2">REUSE PC</span></div>
+            <div class="mt-3"><button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" type="button">COMPRAR</button></div>
             <div class="mt-3"><button class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" type="button">COMPRAR</button></div>
         </div>
     </div>
