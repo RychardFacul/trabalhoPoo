@@ -14,7 +14,7 @@ class ProdutosController extends Controller
         $produtos = $q  
             ? Produto::where('nome', 'like', '%'.trim($q).'%')->paginate(9)
             : Produto::paginate(9);
-        
+        $imagens = [];
         foreach($produtos as $key => $produto) {
             $imagens[$key] = $produto['descricao'].'/'.explode(",", $produto["imagens"])[0];
         }
