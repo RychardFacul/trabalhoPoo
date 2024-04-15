@@ -1,0 +1,203 @@
+/*
+para inserir manualmente nos testes
+
+Usuarios
+ Comprador
+    Nome: José Antônio
+    Email: joseteste@gmail.com
+    Telefone: 66 12345-1234
+    Documento: 527.782.590-82
+    Senha: 123teste!@#
+ adm
+    Nome: Gabriel Alves
+    Email: gabteste@gmail.com
+    Telefone: 66 98765-9876
+    Documento: 529.412.960-42
+    Senha: !@#teste123
+
+Endereço:
+    Usuario_id: "José Antônio | joseteste@gmail.com"
+    Rua: Av. dos Estudantes
+    Numero: 5055
+    Complemento: NULL
+    Bairo: Cidade Universitária
+    Cidade: Rondonópolis
+    Estado: MT
+    CEP: 78736-900
+
+    Rua: Avenida Miguel Sutil
+    Numero: 9300
+    Complemento: Piso L1
+    Bairo: Duque de Caxias
+    Cidade: Cuiabá 
+    Estado: MT
+    CEP: 78020-160
+
+Categoria:
+    Descricao: Utilidades Domésticas
+
+Podutos:
+    Categoria: Utilidades Domésticas
+    Nome: Descascador
+    Marca: Marcamix
+    Descricao: Descascador De Legumes Linha Essencialy
+    Valor: R$ 22,100
+    Estoque: "automatico"
+
+fornecedores:
+    Endereco_id: "Avenida Miguel Sutil"
+    Razao_social: POLIMPORT - COMERCIO E EXPORTACAO LTDA
+    Email: atendimentofiscal@polishop.com.br
+    Telefone: 11 3444-0631
+    Documento: 00.436.042/0187-02
+
+Lote:
+    Fornecedor_id: "POLIMPORT"
+    Produto_id: "Descascador"
+    Descricao: N9o7P8s9r9
+    Quantidade: 50un
+    Valor_compra: 560,000
+    Validade: NULL
+*/
+
+
+
+insert into categorias (id, descricao) values
+    ('1', 'Limpeza'),
+    ('2', 'Higiene'),
+    ('3', 'Frios e Laticínios'),
+    ('4', 'Enlatado'),
+    ('5', 'Bebida Gaseificada'),
+    ('6', 'Bebida Alcoólica');
+
+insert into users (id, tipo, name, email, telefone, documento, password) values
+    (1, '1', 'João Silva', 'joao.silva@example.com', '11987654321', '12345678900', 'senha123'),
+    (2, '2', 'Maria Santos', 'maria.santos@example.com', '21987654321', '98765432100', 'senha456'),
+    (3, '2', 'Carlos Oliveira', 'carlos.oliveira@example.com', '31987654321', '45678912300', 'senha789'),
+    (4, '1', 'Ana Souza', 'ana.souza@example.com', '41987654321', '78912345600', 'senhaabc'),
+    (5, '2', 'Paulo Mendes', 'paulo.mendes@example.com', '51987654321', '32165498700', 'senhadef'),
+    (6, '2', 'Fernanda Lima', 'fernanda.lima@example.com', '61987654321', '65498732100', 'senhaghi'),
+    (7, '1', 'Rodrigo Alves', 'rodrigo.alves@example.com', '71987654321', '98732165400', 'senhajkl'),
+    (8, '2', 'Juliana Costa', 'juliana.costa@example.com', '81987654321', '78945612300', 'senhamno'),
+    (9, '2', 'Marcos Santos', 'marcos.santos@example.com', '91987654321', '32178965400', 'senhopqr'),
+    (10, '1', 'Laura Martins', 'laura.martins@example.com', '01987654321', '45612378900', 'senshu');
+
+insert into enderecos (id, fk_usuario_id, rua, numero, complemento, bairo, cidade, estado, cep) values
+    (1, NULL, 'Rua das Flores', '123', NULL, 'Centro', 'Curitiba', 'PR', '80000000'),
+    (2, 1, 'Avenida Brasil', '456', 'Apto 101', 'Jardim Botânico', 'Rio de Janeiro', 'RJ', '20000000'),
+    (3, 1, 'Rua São Paulo', '789', NULL, 'Centro', 'Belo Horizonte', 'MG', '30000000'),
+    (4, 2, 'Avenida Beira Mar', '101', NULL, 'Praia de Iracema', 'Fortaleza', 'CE', '60000000'),
+    (5, NULL, 'Rua da Praia', '456', NULL, 'Centro', 'Porto Alegre', 'RS', '90000000'),
+    (6, 3, 'Avenida Paulista', '789', 'Sala 501', 'Jardim Paulista', 'São Paulo', 'SP', '01310000'),
+    (7, NULL, 'Rua das Palmeiras', '101', NULL, 'Centro', 'Recife', 'PE', '50000000'),
+    (8, 5, 'Rua do Comércio', '456', NULL, 'Centro', 'Salvador', 'BA', '40000000'),
+    (9, NULL, 'Avenida Atlântica', '789', NULL, 'Copacabana', 'Rio de Janeiro', 'RJ', '22000000'),
+    (10, NULL, 'Rua das Pedras', '101', NULL, 'Centro', 'Búzios', 'RJ', '28950000'),
+    (11, NULL, 'Rua das Mangueiras', '456', NULL, 'Centro', 'Manaus', 'AM', '69000000'),
+    (12, NULL, 'Avenida dos Holandeses', '789', NULL, 'Ponta de Areia', 'São Luís', 'MA', '65000000'),
+    (13, 8, 'Avenida Boa Viagem', '1010', 'Apto 201', 'Boa Viagem', 'Recife', 'PE', '51011000'),
+    (14, 7, 'Rua XV de Novembro', '456', NULL, 'Centro', 'Blumenau', 'SC', '89000000'),
+    (15, 9, 'Avenida Presidente Vargas', '789', NULL, 'Centro', 'Rio de Janeiro', 'RJ', '20000000');
+
+
+insert into fornecedores (id, fk_endereco_id, razao_social, email, telefone, documento) values
+    (1, 1, 'Comercial Almeida e Silva Ltda.', 'contato@almeidaesilva.com.br', '11987654321', '12345678000101'),
+    (2, 5, 'Indústria Xavier & Cia.', 'contato@xaviercia.com.br', '21876543210', '23456789000102'),
+    (3, 7, 'Distribuidora Oliveira Ltda.', 'contato@oliveiraltda.com.br', '31765432109', '34567890000103'),
+    (4, 9, 'Serviços Ramos & Filhos', 'contato@ramosefilhos.com.br', '41654321098', '45678901000104'),
+    (5, 10, 'Comércio Costa Verde Ltda.', 'contato@costaverde.com.br', '51543210987', '56789012000105'),
+    (6, 11, 'Transportadora Santos & Santos', 'contato@santosetransportes.com.br', '61432109876', '67890123000106'),
+    (7, 12, 'Distribuidora Pereira & Associados', 'contato@pereiraeassociados.com.br', '71321098765', '789012340001');
+
+insert into produtos (id, fk_categoria_id, nome, marca, descricao, imagens, valor, estoque) values
+    (1, 1, 'Detergente', 'Ypê', 'Detergente_Ypê_500ml', 2.50, 100.000),
+    (2, 2, 'Sabonete', 'Dove', 'Sabonete_Dove_90g', 'Sabonete_Dove-padrao.webp,Sabonete_Dove-sem_caixa.webp,Sabonete_Dove-amarelo.webp,Sabonete_Dove-aberto.webp', 1.80, 150.000),
+    (3, 3, 'Leite', 'Nestlé', 'Leite_Integral_Nestlé_1L', 3.50, 50.000),
+    (4, 4, 'Milho', 'Quero', 'Milho_Verde_em_Lata_280g', 2.00, 80.000),
+    (5, 5, 'Refrigerante', 'Coca-Cola', 'Refrigerante_Coca-Cola_2L', 5.00, 60.000),
+    (6, 6, 'Cerveja', 'Skol', 'Cerveja_Skol_Pilsen_Lata_350ml', 3.00, 70.000),
+    (7, 1, 'Limpador Multiuso', 'Veja', 'Limpador_Multiuso_Veja_500ml', 4.00, 90.000),
+    (8, 2, 'Shampoo', 'Pantene', 'Shampoo_Pantene_Micelar_400ml', 8.00, 120.000),
+    (9, 3, 'Café', 'Melitta', 'Café_Melitta_Extra_Forte_500g', 10.00, 250.500),
+    (10, 4, 'Atum', 'Gomes da Costa', 'Atum_em_Lata_Óleo_170g', 6.00, 50.000);
+
+insert into lotes (id, fk_fornecedor_id, fk_produto_id, descricao, quantidade, valor_compra, validade) values
+    (1, 5, 7, 'A1b2C3d4E5', 150, 1000.00, '2027-06-05'),
+    (2, 2, 3, 'D6e7F8g9H0', 70, 1500.00, '2027-06-10'),
+    (3, 6, 8, 'I1J2k3L4m5', 120, 1050.00, '2027-07-15'),
+    (4, 3, 4, 'V6W7X8Y9Z0', 100, 600.00, '2027-08-15'),
+    (5, 1, 6, 'N6o7P8q9r0', 40, 800.00, '2027-08-20'),
+    (6, 7, 1, 'S1t2U3v4W5', 50, 1000.00, '2027-09-25'),
+    (7, 4, 7, '1a2b3c4d5e', 70, 3600.00, '2027-09-30'),
+    (8, 2, 6, 'f6g7h8i9j0', 80, 270.00, '2027-10-25'),
+    (9, 4, 10, 'X6y7Z8a9B0', 80, 450.00, '2027-10-30'),
+    (10, 3, 5, 'c1D2e3F4g5', 100, 3000.00, '2027-11-05'),
+    (11, 5, 3, 'k1l2m3n4o5', 130, 200.00, '2027-11-30'),
+    (12, 1, 10, 'Q1R2S3T4U5', 60, 750.00, '2027-12-01'),
+    (13, 6, 9, 'p6q7r8s9t0', 40, 600.00, '2027-12-05'),
+    (14, 5, 2, 'h6I7J8k9L0', 130, 240.00, '2027-12-10'),
+    (15, 1, 4, 'm1N2o3P4q5', 110, 125.00, '2028-01-15'),
+    (16, 3, 9, 'r6S7t8U9v0', 90, 420.00, '2028-02-20'),
+    (17, 7, 5, 'L6M7N8O9P0', 20, 600.00, '2028-02-05'),
+    (18, 2, 1, 'G1H2I3J4K5', 140, 1400.00, '2028-03-10'),
+    (19, 6, 8, 'w1X2y3Z4a5', 50, 1200.00, '2028-03-25'),
+    (20, 4, 2, 'B6C7D8E9F0', 30, 1600.00, '2028-03-30');
+
+insert into vendas (id, form_pagamento, status) values
+    (1, 5, 2),
+    (2, 2, 3),
+    (3, 1, 1),
+    (4, 4, 1),
+    (5, 3, 2);
+
+insert into itens (id, fk_usuario_id, fk_produto_id, fk_venda_id, quantidade) values
+    (1, 2, 6, 2, 5.000),
+    (2, 5, 8, 5, 3.000),
+    (3, 4, 3, 4, 2.000),
+    (4, 5, 2, 5, 1.000),
+    (5, 2, 5, NULL, 4.000),
+    (6, 1, 1, 1, 6.000),
+    (7, 5, 7, 5, 2.000),
+    (8, 8, 10, NULL, 3.000),
+    (9, 4, 4, NULL, 2.000),
+    (10, 5, 9, 5, 1.000),
+    (11, 3, 8, 3, 5.000),
+    (12, 8, 2, NULL, 3.000),
+    (13, 6, 5, NULL, 2.000),
+    (14, 1, 7, 1, 1.000),
+    (15, 4, 6, NULL, 4.000),
+    (16, 9, 1, NULL, 6.000),
+    (17, 2, 10, 2, 2.000),
+    (18, 3, 4, 3, 3.000),
+    (19, 2, 9, 2, 2.000),
+    (20, 1, 3, 1, 1.000),
+    (21, 3, 2, 3, 5.000),
+    (22, 7, 5, NULL, 3.000),
+    (23, 4, 8, 4, 2.000),
+    (24, 9, 1, NULL, 1.000),
+    (25, 1, 6, 1, 4.000),
+    (26, 3, 7, 3, 6.000),
+    (27, 5, 8, 5, 2.000),
+    (28, 4, 3, 4, 3.000),
+    (29, 5, 10, 5, 2.000),
+    (30, 2, 4, 2, 1.000),
+    (31, 1, 9, 1, 5.000),
+    (32, 5, 2, 5, 3.000),
+    (33, 3, 5, 3, 2.000),
+    (34, 3, 7, NULL, 1.000),
+    (35, 3, 6, 3, 4.000),
+    (36, 2, 1, 2, 6.000),
+    (37, 5, 10, NULL, 2.000),
+    (38, 4, 4, 4, 3.000),
+    (39, 6, 9, NULL, 2.000),
+    (40, 5, 5, 5, 1.000),
+    (41, 3, 6, 3, 5.000),
+    (42, 7, 3, NULL, 3.000),
+    (43, 4, 4, 4, 2.000),
+    (44, 5, 5, 5, 1.000),
+    (45, 9, 2, NULL, 4.000),
+    (46, 3, 7, 3, 6.000),
+    (47, 5, 8, 5, 2.000),
+    (48, 5, 1, 5, 3.000),
+    (49, 5, 6, 5, 2.000),
+    (50, 7, 3, NULL, 1.000);
