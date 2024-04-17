@@ -42,7 +42,10 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/carrinho', [AuthController::class, 'carrinho'])->name('carrinho');
 Route::post('/produtos', [AuthController::class, 'produtos'])->name('produtos');
+
+Route::get('/carrinho/deletar/{prodId}', [CarrinhoController::class, 'delDoCarrinho'])->name('delDoCarrinho');
 Route::get('/carrinho/adicionar/{prodId}', [CarrinhoController::class, 'addAoCarrinho'])->name('addAoCarrinho');
+Route::get('/carrinho/deletarAll/{prodId}', [CarrinhoController::class, 'delAllDoCarrinho'])->name('delAllDoCarrinho');
 
 /////
 ///// ROTAS RESTRITAS

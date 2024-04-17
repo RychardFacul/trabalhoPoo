@@ -34,6 +34,29 @@ class Carrinho extends Model
         ]);
     }
 
+    public static function del($cardId = null, $prodId = null) {
+        if(!$cardId || !$prodId) {
+            return null;
+        }
+
+        $CP = Carrinho_Produtos::where('fk_carrinho_id', $cardId)->where('fk_produto_id', $prodId)->first(); 
+
+        if($CP['quantidade'] > 0){
+            $CP['quantidade'] -= 1;
+            $CP->save();
+            return $CP;
+        }
+
+        $CP->delete();
+        return 0;
+    }
+
+    public static function delAll($cardId = null, $prodId = null) {
+        $CP = Carrinho_Produtos::where('fk_carrinho_id', $cardId)->where('fk_produto_id', $prodId)->first(); 
+
+        if($CP) $CP->delete();
+    }
+
     public static function produtos($cardId = null) {
         if(!$cardId) {
             return null;

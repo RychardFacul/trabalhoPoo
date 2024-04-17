@@ -12,6 +12,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Total</th>
@@ -20,6 +21,9 @@
                     <tbody>
                         @foreach ($produtos as $produto)
                             <tr>
+                                <td>
+                                    <a style="font-size: 2em; color: red" href="{{route('delAllDoCarrinho', ['prodId' => $produto['id']])}}">-</a>
+                                </td>
                                 <td class="tela">
                                     <div class="display-flex align-center">
                                         <div class="img-product">
@@ -29,16 +33,18 @@
                                             {{$produto['nome']}}
                                         </div>
                                         <div class="price">
-                                            {{$produto['valor']}}
+                                            R$ {{number_format($produto['valor'], 2, ',', '.')}}
                                         </div>
                                     </div>
                                 </td>
-                                <td class="product-qtd">
+                                <td class="product-qtd" style="display: flex; height: 153px">
+                                    <a href="{{route('delDoCarrinho', ['prodId' => $produto['id']])}}">-</a>
                                     <h3>{{$produto['quantidade']}}</h3>
+                                    <a href="{{route('addAoCarrinho', ['prodId' => $produto['id']])}}">+</a>
                                 </td>
                                 <td>
                                     <div class="total">
-                                        {{$produto['valor'] * $produto['quantidade']}}
+                                        R$ {{number_format($produto['valor'] * $produto['quantidade'], 2, ',', '.')}}
                                     </div>
                                 </td>
                             </tr>
@@ -55,7 +61,7 @@
                         <tbody>
                             <tr>
                                 <td>Subtotal</td>
-                                <td class="subtotal">$2,589.00</td>
+                                <td class="subtotal">R$ {{number_format($subTotal, 2, ',', '.')}}</td>
                             </tr>
                             <tr>
                                 <td>Shipping</td>
@@ -63,7 +69,7 @@
                             </tr>
                             <tr class="total-row">
                                 <td>Total</td>
-                                <td class="price-total">$1,591.00</td>
+                                <td class="subtotal">R$ {{number_format($subTotal, 2, ',', '.')}}</td>
                             </tr>
                         </tbody>
                     </table>
