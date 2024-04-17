@@ -90,7 +90,7 @@
                       <span><strong>R$ {{number_format($subTotal, 2, ',', '.')}}</strong></span>
                     </li>
                   </ul>
-                  <a href="{{route('compra')}}"></a>
+                  <a href="{{route('compra')}}">
                     <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">
                         Finalizar Compra
                     </button>
