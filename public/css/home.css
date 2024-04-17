@@ -1,4 +1,14 @@
+.carousel{
+  width: 100%; /* largura desejada */
+  height: 800px; /* altura desejada */
+  overflow: hidden; /* esconde partes da imagem fora do contêiner */
+  object-position: center
+}
+
 .carousel-item img{
-  height: 400px;
-  width: 100%;
-} 
+  width: 100%; /* 100% da largura do contêiner */
+  height: 100%; /* 100% da altura do contêiner */
+  object-fit: cover; /* mantém a proporção e corta a imagem para preencher o contêiner */
+  object-position: center; /* exibe a parte central da imagem */
+  vertical-align: middle;
+}
