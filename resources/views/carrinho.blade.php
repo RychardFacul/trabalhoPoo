@@ -5,8 +5,6 @@
 @endsection
 
 @section('section')
-
-
     <section class="h-100 gradient-custom" style="margin-top: -100px;">
         <div class="container py-5">
           <div class="row d-flex justify-content-center my-4">
@@ -94,7 +92,7 @@
                   </ul>
                   <a href="{{route('compra')}}"></a>
                     <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">
-                    Finalizar Compra
+                        Finalizar Compra
                     </button>
                   </a>
                 </div>
