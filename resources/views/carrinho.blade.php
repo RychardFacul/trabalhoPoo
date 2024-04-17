@@ -56,12 +56,13 @@
         <div class=" nome col-lg-4">
             <div class="cart-totals">
                 <h3>Cart Totals</h3>
-                <form action="#" method="get" accept-charset="utf-8">
+                <form action="{{route('compra')}}" method="get" accept-charset="utf-8">
                     <table>
                         <tbody>
                             <tr>
                                 <td>Subtotal</td>
                                 <td class="subtotal">R$ {{number_format($subTotal, 2, ',', '.')}}</td>
+                                <input type="hidden" name="subtotal" value="{{$subTotal}}">
                             </tr>
                             <tr>
                                 <td>Shipping</td>
@@ -70,11 +71,12 @@
                             <tr class="total-row">
                                 <td>Total</td>
                                 <td class="subtotal">R$ {{number_format($subTotal, 2, ',', '.')}}</td>
+                                <input type="hidden" name="total" value="{{$subTotal}}">
                             </tr>
                         </tbody>
                     </table>
                     <div class="btn-cart-totals">
-                        <a href="#" class="checkout round-black-btn" title="">Proceed to Checkout</a>
+                        <input type="submit" class="checkout round-black-btn" title="">Processar compra</a>
                     </div>
                 </form>
             </div>
