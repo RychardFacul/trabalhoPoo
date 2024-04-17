@@ -3,4 +3,17 @@ body{
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    background-color: #979dac;
+    color: #001030;
+}
+
+.azul {
+    background-color: rgb(0, 15, 99);
+    padding: 75px;
+    max-width: 350px;
+    padding: 1rem;
+    margin: 0 auto;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
 }

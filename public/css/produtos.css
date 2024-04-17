@@ -99,3 +99,7 @@ label.radio input:checked+span {
     background-color: #8f37aa;
     color: #fff
 }
+.carousel-item img{
+    height: 100%;
+    width: 100%;
+  } 

@@ -1,18 +1,55 @@
-
-.form-container {
-    max-width: 350px;
-    padding: 1rem;
-    margin: 0 auto;
+body{
+    background-image: url('https://th.bing.com/th/id/OIG4.0F9DyFIPFzibknSnzalS?pid=ImgGn');
+    background-size: cover;
+    background-position: center;
 }
-.formulario,
-.maria {
-    margin-bottom: 1rem; /* Espaçamento entre campos */
-}
-.luiza {
+.formLogin {
     padding: 20px;
-    background-color: rgba(127, 236, 255, 0.486);
+    background-color: rgba(8, 31, 57, 0.781);
+    max-width: 500px;
+    border: 1px solid white;
 }
-.rosa {
-    background-color: rgb(0, 96, 99);
-    padding: 30px;
+.imgLogoNome{
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 22px;
+}
+.formulario{
+    margin-top: 10px;
+}
+.imgLogoNome img{
+   width: 50px;
+   height: 50px;
+   margin-right: 5px;
+}
+
+.formLogin h2{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 23px;
+    text-align: center;
+    justify-content: center;
+}
+.inputForm{
+    font-size: 18px;
+    margin-top: 5px;
+    border: 1px solid white;
+}
+.formLogin button{
+    padding: 8px;
+    background: #001845;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+.formLogin button:hover{
+    padding: 8px;
+    background: #1295e0;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid white;
+    transition-duration: 0.4s;
 }
