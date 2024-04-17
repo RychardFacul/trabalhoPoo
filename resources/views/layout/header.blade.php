@@ -51,7 +51,7 @@
 
 <nav class="navbar navbar-expand-lg py-2" style="background: #001845;">
   <div class="container-fluid">
-      <a class="navbar-brand" href="">
+      <a class="navbar-brand" href="{{route('homepage')}}">
           <img class="img-fluid" src="../../img/icone.png" alt="" width="48px" height="48px">
           <span style="margin-left: 10px">SóGiro SuperMercado</span>
       </a>
@@ -107,10 +107,10 @@
           </ul>
           <div class="ms-lg-auto">
             
-            <a class="btn btn-outline-primary me-2" href="#">
+            <a class="btn btn-outline-primary me-2" href="{{route('cadastro')}}">
               Cadastrar
             </a>
-            <a class="btn btn-primary" href="#">
+            <a class="btn btn-primary" href="{{route('login')}}">
               Login
             </a>
           </div>
