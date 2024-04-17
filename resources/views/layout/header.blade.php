@@ -106,7 +106,11 @@
             </li>
           </ul>
           <div class="ms-lg-auto">
-            
+            @auth
+            <a class="btn btn-outline-primary me-2" href="{{route('logout')}}">
+              logout
+            </a>
+            @else 
             <a class="btn btn-outline-primary me-2" href="{{route('cadastro')}}">
               Cadastrar
             </a>
@@ -114,6 +118,7 @@
             <a class="btn btn-primary" href="{{route('login')}}">
               Login
             </a>
+            @endauth
           </div>
       </div>
   </div>

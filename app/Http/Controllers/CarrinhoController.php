@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\Auth;
 class CarrinhoController extends Controller
 {
     public function index() {
-        if (!Auth::check()) {
-            return redirect('/login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('/login');
+        // }
 
-        $produtos = Carrinho::produtos(session()->get('cardId'));
-        $subTotal = 0;
+        // $produtos = Carrinho::produtos(session()->get('cardId'));
+        // $subTotal = 0;
 
-        foreach($produtos as $produto) {
-            $subTotal += $produto['quantidade'] * $produto['valor'];
-        }
+        // foreach($produtos as $produto) {
+        //     $subTotal += $produto['quantidade'] * $produto['valor'];
+        // }
 
-        return view('carrinho', ['produtos' => $produtos, 'subTotal' => $subTotal]);
+        return view('carrinho'/*, ['produtos' => $produtos, 'subTotal' => $subTotal] */);
     }
     
     public function addAoCarrinho($prodId) {

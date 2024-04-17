@@ -15,10 +15,6 @@ class Carrinho extends Model
 
     protected $fillable = ['fk_usuario_id'];
 
-    public function carrinho_produtos() {
-        $this->hasMany(Carrinho_Produtos::class);
-    }
-
     public static function add($cardId = null, $prodId = null) {
         if(!$cardId || !$prodId) {
             return null;
