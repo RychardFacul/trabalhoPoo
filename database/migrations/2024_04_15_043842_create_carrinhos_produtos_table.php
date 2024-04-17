@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->boolean('check')->default(1);
             
-            $table->decimal('quantidade', 10, 3)->default(1);
+            $table->integer('quantidade')->default(1);
 
             $table->timestamps();
         });

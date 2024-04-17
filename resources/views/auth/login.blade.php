@@ -2,11 +2,11 @@
 @section('title', 'Login')
 
 @section('scripts')
-    @isset($LoginError)
-        <script>
-            alert('{{ $LoginError }}')
-        </script>
-    @endisset
+    <script>
+        @if(session('LoginError'))
+            alert('{{ session('LoginError') }}');
+        @endif    
+    </script>   
 @endsection
 
 @section('links')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Vendas\Carrinho;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -50,18 +51,26 @@ class AuthController extends Controller
         
         $usuario = User::where('email', $email)->first();
         
-        if ($usuario && Hash::check($senha, $usuario->password)) {
-            Auth::login($usuario);
-
-            $carrinho = Carrinho::where('fk_usuario_id', $usuario['id'])->first();
-    
-            session()->put('cardId', $carrinho['id']);
-            session()->put('userId', $usuario['id']);
-            
-            return redirect()->route('homepage');
-        } else {
-            return redirect('/login')->with('LoginError', 'Erro ao tentar realizar o login');
+        if (!$usuario) {
+            throw ValidationException::withMessages([
+                'email' => 'Credenciais inválidas',
+            ])->redirectTo('/login');    
         }
+        
+        if (!Hash::check($senha, $usuario->password)) {
+            throw ValidationException::withMessages([
+                'senha' => 'Senha incorreta',
+            ])->redirectTo('/login');    
+        }
+
+        Auth::login($usuario);
+
+        $carrinho = Carrinho::where('fk_usuario_id', $usuario['id'])->first();
+
+        session()->put('cardId', $carrinho['id']);
+        session()->put('userId', $usuario['id']);
+        
+        return redirect()->route('homepage');
     } 
     
     public function logout() {
