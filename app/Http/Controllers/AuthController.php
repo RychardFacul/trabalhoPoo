@@ -60,7 +60,7 @@ class AuthController extends Controller
             
             return redirect()->route('homepage');
         } else {
-            return view('auth.cadastro'); 
+            return redirect('/login');
         }
     } 
     

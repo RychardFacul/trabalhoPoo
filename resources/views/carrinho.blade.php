@@ -48,9 +48,7 @@
                 </tbody>
             </table>
         </div>
-        <!-- /.table-cart -->
     </div>
-    <!-- /.col-lg-8 -->
     <div class="col-lg-4">
         <div class="cart-totals">
             <h3>Cart Totals</h3>
@@ -74,12 +72,8 @@
                 <div class="btn-cart-totals">
                     <a href="#" class="checkout round-black-btn" title="">Proceed to Checkout</a>
                 </div>
-                <!-- /.btn-cart-totals -->
             </form>
-            <!-- /form -->
         </div>
-        <!-- /.cart-totals -->
     </div>
-    <!-- /.col-lg-4 -->
 </div>
 @endsection

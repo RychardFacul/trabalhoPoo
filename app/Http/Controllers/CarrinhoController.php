@@ -15,7 +15,9 @@ class CarrinhoController extends Controller
 
         $produtos = Carrinho::produtos(session()->get('cardId'));
         $subTotal = 0;
+
         foreach($produtos as $produto) {
+            dd($produto);
             $subTotal += $produto['quantidade'] * $produto['valor'];
         }
 
