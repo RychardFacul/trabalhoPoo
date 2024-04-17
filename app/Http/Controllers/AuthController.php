@@ -60,7 +60,7 @@ class AuthController extends Controller
             
             return redirect()->route('homepage');
         } else {
-            return redirect('/login');
+            return redirect('/login')->with('LoginError', 'Erro ao tentar realizar o login');
         }
     } 
     

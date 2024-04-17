@@ -17,7 +17,6 @@ class CarrinhoController extends Controller
         $subTotal = 0;
 
         foreach($produtos as $produto) {
-            dd($produto);
             $subTotal += $produto['quantidade'] * $produto['valor'];
         }
 

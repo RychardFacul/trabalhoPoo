@@ -1,5 +1,14 @@
 @extends('site')
 @section('title', 'Login')
+
+@section('scripts')
+    @empty($LoginError)
+        <script>
+            alert('{{ $LoginError }}')
+        </script>
+    @endempty
+@endsection
+
 @section('links')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 @endsection
