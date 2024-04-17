@@ -110,6 +110,7 @@
             <a class="btn btn-outline-primary me-2" href="{{route('cadastro')}}">
               Cadastrar
             </a>
+            
             <a class="btn btn-primary" href="{{route('login')}}">
               Login
             </a>

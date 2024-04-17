@@ -20,4 +20,8 @@ class Produto extends Model
         'valor',
         'estoque'
     ];
+
+    public function carrinho_produtos() {
+        $this->hasOne(Carrinho_Produtos::class);
+    }
 }

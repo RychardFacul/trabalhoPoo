@@ -66,8 +66,7 @@ class AuthController extends Controller
     
     public function logout() {
         Auth::logout();
-        session()->forget('cardId');
-        session()->forget('userId');
+        session()->flush();
         
         return redirect()->route('homepage');
     }

@@ -13,5 +13,13 @@ class Carrinho_Produtos extends Model
 
     protected $primaryKey = "id";
 
-    protected $fillable = ['fk_endereco_id', 'fk_carrinho_id', 'check', 'quantidade'];
+    protected $fillable = ['fk_produto_id', 'fk_carrinho_id', 'check', 'quantidade'];
+
+    public function carrinho() {
+        return $this->belongsTo(Carrinho::class, 'fk_carrinho_id');
+    }
+
+    public function produtos() {
+        return $this->belongsTo(Produto::class, 'fk_produto_id');
+    }
 }

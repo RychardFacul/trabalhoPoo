@@ -22,6 +22,12 @@
         <script src="../assets/js/color-modes.js"></script>
         <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         @yield('scripts')
+
+        <style>
+            * {
+                color: white;
+            }
+        </style>
     </head>
     <body>
         @include('layout.header')

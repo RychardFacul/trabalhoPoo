@@ -3,34 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Vendas\Carrinho_Produtos;
-use Illuminate\Http\Request;
+use App\Models\Vendas\Carrinho;
 use Illuminate\Support\Facades\Auth;
 
 class CarrinhoController extends Controller
 {
     public function index() {
-        
-    }
-    
-    public function addAoCarrinho($id) {
-        if (Auth::check()) {
+        if (!Auth::check()) {
             return redirect('/login');
         }
 
-        if (Carrinho_Produtos::where('fk_produto_id', $id)) {
-            $CP = Carrinho_Produtos::find($id);
-            if ($CP) {
-                $CP->quantidade += 1;
-                $CP->save();
-            }
+        $produtos = Carrinho::produtos(session()->get('cardId'));
+        $subTotal = 0;
+        foreach($produtos as $produto) {
+            $subTotal += $produto['quantidade'] * $produto['valor'];
         }
-        else {
-            Carrinho_Produtos::create([
-                'fk_carrinho_id' => session('carId'),
-                'fk_produto_id' => $id,
-            ]);
+
+        return view('carrinho', ['produtos' => $produtos, 'subTotal' => $subTotal]);
+    }
+    
+    public function addAoCarrinho($prodId) {
+        if (!Auth::check()) {
+            return redirect('/login');
         }
+
+        Carrinho::add(session()->get('cardId'), $prodId);
         
         return redirect()->back();
     }
