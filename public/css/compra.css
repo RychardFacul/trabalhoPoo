@@ -1,28 +1,3 @@
-php, body {
-    height: 100%;
-}
-
-.form-container {
-    max-width: 350px;
-    padding: 1rem;
-    margin: 0 auto;
-}
-
-
 body{
-    background: url('https://i.pinimg.com/736x/42/d1/30/42d1301a16b60d79b1e8471c4338765a.jpg');
-  
+    background-color: #6a6b6e;
 }
-
-.formulario,
-.maria {
-    margin-bottom: 1rem; /* Espaçamento entre campos */
-}
-.luiza {
-    padding: 20px;
-    background-color: rgba(255, 127, 212, 0.719);
-}
-.rosa {
-    background-color: rgba(80, 5, 35, 0.863);
-}
-
