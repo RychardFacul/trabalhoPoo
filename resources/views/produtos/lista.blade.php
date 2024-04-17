@@ -20,7 +20,7 @@
                         </a>
                         <h5 class="card-text-Desc">{{$produto->descricao}}</h5>
                         <h5 class="card-text-valor">R$ {{number_format($produto->valor, 2, ',', '.')}}</h5>
-                        <a class="card-link btn btn-primary" href="#"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+                        <a class="card-link btn btn-primary" href="#"><i class="fa-solid fa-cart-shopping"></i> Adicionar ao Carrinho</a>
                     </div>
                 </div>
             </div>
