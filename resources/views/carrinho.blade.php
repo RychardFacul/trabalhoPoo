@@ -1,12 +1,11 @@
 @extends('site')
 
 @section('links')
-    <link href="./css/carrinho.css" rel="stylesheet">
+    <link href="{{ asset('css/carrinho.css') }}" rel="stylesheet">
 @endsection
 
 @section('section')
-{{$produtos[0]['id']}}
-{{$subTotal}}
+
 <div class="row">
     <div class="col-lg-8 divCart">
         <div class="main-heading">Meu Carrinho</div>
@@ -22,7 +21,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td class="tela">
                             <div class="display-flex align-center">
                                 <div class="img-product">
                                     <img src="https://www.91-img.com/pictures/laptops/asus/asus-x552cl-sx019d-core-i3-3rd-gen-4-gb-500-gb-dos-1-gb-61721-large-1.jpg" alt="" class="mCS_img_loaded">
@@ -49,7 +48,7 @@
             </table>
         </div>
     </div>
-    <div class="col-lg-4">
+    <div class=" nome col-lg-4">
         <div class="cart-totals">
             <h3>Cart Totals</h3>
             <form action="#" method="get" accept-charset="utf-8">
