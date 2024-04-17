@@ -1,0 +1,35 @@
+body{
+    background: rgb(185, 185, 185);
+}
+.buttonComprarProdDesc{
+    background-color: rgb(29, 103, 29);
+    padding: 15px;
+    width: 350px;
+    color: black;
+    font-weight: 500;
+    border: solid 1.5px black;
+}
+.buttonComprarProdDesc:hover{
+    background-color: rgb(144, 225, 144);
+    padding: 15px;
+    width: 350px;
+    color: black;
+    font-weight: 500;
+    border: solid 1.5px black;
+}
+.ProdNome{
+    font-size: 28px;
+    font-weight: 700;
+}
+.price{
+    font-size: 24px;
+    font-weight: 600;
+}
+.ProdFabric,.ProdDescCompleta{
+    font-size: 20px;
+    font-weight: 500;
+}
+.SliderProdutos img{
+    height: 500px;
+    width: 100%;
+}
