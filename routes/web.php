@@ -34,7 +34,7 @@ Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos');
 Route::get('/produto/descricao/{id}', [ProdutosController::class, 'descricao'])->name('produtos.descricao');
 
 Route::get('/compra/{prodId?}', [CompraController::class, 'index'])->name('compra');
-Route::post('/comprar/{vendId}', [CompraController::class, 'efetuarcompra'])->name('efetuarcompra');
+Route::get('/comprar/{vendId}', [CompraController::class, 'efetuarcompra'])->name('efetuarcompra');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/cadastro', [AuthController::class, 'cadastro'])->name('cadastro');

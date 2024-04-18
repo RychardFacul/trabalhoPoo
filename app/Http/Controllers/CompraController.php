@@ -42,5 +42,7 @@ class CompraController extends Controller
 
     public function efetuarcompra(Request $request, $vendId = null) {
         Venda::comprar($vendId, $request->input('forma_pagamento'));
+
+        return redirect()->route('homepage');
     }
 }
